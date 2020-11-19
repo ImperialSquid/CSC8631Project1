@@ -40,11 +40,7 @@ Costs and Benefits
 Data Mining Goals
 Data Mining Success Criteria
 
-<<<<<<< HEAD
 ## Produce Project Plan
-=======
-##Produce Project Plan
->>>>>>> 261cc6db67ad3b83b62ffe8d5f6524a5dcccefbc
 
 Project Plan
 Initial Assessment of Tools and Techniques
@@ -53,7 +49,6 @@ Initial Assessment of Tools and Techniques
 
 # Data Understanding
 
-<<<<<<< HEAD
 ## Collect Initial Data
 
 Initial Data Collection Report
@@ -67,21 +62,6 @@ Data Description Report
 Data Exploration Report
 
 ## Verify Data Quality
-=======
-##Collect Initial Data
-
-Initial Data Collection Report
-
-##Describe Data
-
-Data Description Report
-
-##Explore Data
-
-Data Exploration Report
-
-##Verify Data Quality
->>>>>>> 261cc6db67ad3b83b62ffe8d5f6524a5dcccefbc
 
 Data Quality Report
 
