@@ -23,27 +23,27 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Determine Business Objectives
 
-Background  
-Business Objectives  
-Business Success Criteria  
+### Background  
+### Business Objectives  
+### Business Success Criteria  
 
 ## Assess Situation
 
-Inventory of Resources  
-Requirements, Assumptions, and Constraints  
-Risks and Contingencies  
-Terminology  
-Costs and Benefits  
+### Inventory of Resources  
+### Requirements, Assumptions, and Constraints  
+### Risks and Contingencies  
+### Terminology  
+### Costs and Benefits  
 
 ## Determine Data Mining Goals
 
-Data Mining Goals  
-Data Mining Success Criteria  
+### Data Mining Goals  
+### Data Mining Success Criteria  
 
 ## Produce Project Plan
 
-Project Plan  
-Initial Assessment of Tools and Techniques  
+### Project Plan  
+### Initial Assessment of Tools and Techniques  
 
 \newpage
 
@@ -51,19 +51,19 @@ Initial Assessment of Tools and Techniques
 
 ## Collect Initial Data
 
-Initial Data Collection Report  
+### Initial Data Collection Report  
 
 ## Describe Data
 
-Data Description Report  
+### Data Description Report  
 
 ## Explore Data
 
-Data Exploration Report  
+### Data Exploration Report  
 
 ## Verify Data Quality
 
-Data Quality Report  
+### Data Quality Report  
 
 
 \newpage
@@ -72,28 +72,28 @@ Data Quality Report
 
 ## Select Data
 
-Rationale for Inclusion/Exclusion  
+### Rationale for Inclusion/Exclusion  
 
 ## Clean Data
 
-Data Cleaning Report  
+### Data Cleaning Report  
 
 ## Construct Data
 
-Derived Attributes  
-Generated Records  
+### Derived Attributes  
+### Generated Records  
 
 ## Integrate Data
 
-Merged Data  
+### Merged Data  
 
 ## Format Data
 
-Reformatted Data  
+### Reformatted Data  
 
 ## Dataset
 
-Dataset Description  
+### Dataset Description  
 
 \newpage
 
@@ -101,23 +101,23 @@ Dataset Description
 
 ## Select Modeling Techniques
 
-Modeling Technique  
-Modeling Assumptions  
+### Modeling Technique  
+### Modeling Assumptions  
 
 ## Generate Test Design
 
-Test Design  
+### Test Design  
 
 ## Build Model
 
-Parameter Settings  
-Models  
-Model Descriptions  
+### Parameter Settings  
+### Models  
+### Model Descriptions  
 
 ## Assess Model
 
-Model Assessment  
-Revised Parameter Settings  
+### Model Assessment  
+### Revised Parameter Settings  
 
 \newpage
 
@@ -125,17 +125,17 @@ Revised Parameter Settings
 
 ## Evaluate Results
 
-Assessment of Data Mining Results w.r.t. Business Success Criteria  
-Approved Models  
+### Assessment of Data Mining Results w.r.t. Business Success Criteria  
+### Approved Models  
 
 ## Review Process
 
-Review of Process  
+### Review of Process  
 
 ## Determine Next Steps
 
-List of Possible Actions  
-Decision  
+### List of Possible Actions  
+### Decision  
 
 \newpage
 
@@ -143,17 +143,17 @@ Decision
 
 ## Plan Deployment
 
-Deployment Plan  
+### Deployment Plan  
 
 ## Plan Monitoring and Maintenance
 
-Monitoring and Maintenance Plan  
+### Monitoring and Maintenance Plan  
 
 ## Produce Final Report
 
-Final Report  
-Final Presentation  
+### Final Report  
+### Final Presentation  
 
 ## Review Project
 
-Experience Documentation  
+### Experience Documentation  
