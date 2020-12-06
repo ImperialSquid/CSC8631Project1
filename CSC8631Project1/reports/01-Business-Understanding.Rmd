@@ -1,25 +1,53 @@
 # Business Understanding
+dfgadfg
 
 ## Determine Business Objectives
+adrga
 
 ### Background  
+adrga
+
 ### Business Objectives  
+ardgadr
+
 ### Business Success Criteria  
+adergadr
+
 
 ## Assess Situation
+drag
 
 ### Inventory of Resources  
+adrg
+
 ### Requirements, Assumptions, and Constraints  
+adrg
+
 ### Risks and Contingencies  
+adrgard
+
 ### Terminology  
+adrg
+
 ### Costs and Benefits  
+adrg
+
 
 ## Determine Data Mining Goals
+adrg
 
 ### Data Mining Goals  
+adrg
+
 ### Data Mining Success Criteria  
+adrg
+
 
 ## Produce Project Plan
+adrg
 
 ### Project Plan  
+adrgadr
+
 ### Initial Assessment of Tools and Techniques  
+ardgadr

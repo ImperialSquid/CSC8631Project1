@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>CRISP-DM Project Writeup</title>
+  <meta name="description" content="CRISP-DM Project Writeup" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="CRISP-DM Project Writeup" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="CRISP-DM Project Writeup" />
+  
+  
+  
+
+<meta name="author" content="Ben Jaeger" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path=""><a href="#business-understanding"><i class="fa fa-check"></i><b>1</b> Business Understanding</a><ul>
+<li class="chapter" data-level="1.1" data-path=""><a href="#determine-business-objectives"><i class="fa fa-check"></i><b>1.1</b> Determine Business Objectives</a><ul>
+<li class="chapter" data-level="1.1.1" data-path=""><a href="#background"><i class="fa fa-check"></i><b>1.1.1</b> Background</a></li>
+<li class="chapter" data-level="1.1.2" data-path=""><a href="#business-objectives"><i class="fa fa-check"></i><b>1.1.2</b> Business Objectives</a></li>
+<li class="chapter" data-level="1.1.3" data-path=""><a href="#business-success-criteria"><i class="fa fa-check"></i><b>1.1.3</b> Business Success Criteria</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path=""><a href="#assess-situation"><i class="fa fa-check"></i><b>1.2</b> Assess Situation</a><ul>
+<li class="chapter" data-level="1.2.1" data-path=""><a href="#inventory-of-resources"><i class="fa fa-check"></i><b>1.2.1</b> Inventory of Resources</a></li>
+<li class="chapter" data-level="1.2.2" data-path=""><a href="#requirements-assumptions-and-constraints"><i class="fa fa-check"></i><b>1.2.2</b> Requirements, Assumptions, and Constraints</a></li>
+<li class="chapter" data-level="1.2.3" data-path=""><a href="#risks-and-contingencies"><i class="fa fa-check"></i><b>1.2.3</b> Risks and Contingencies</a></li>
+<li class="chapter" data-level="1.2.4" data-path=""><a href="#terminology"><i class="fa fa-check"></i><b>1.2.4</b> Terminology</a></li>
+<li class="chapter" data-level="1.2.5" data-path=""><a href="#costs-and-benefits"><i class="fa fa-check"></i><b>1.2.5</b> Costs and Benefits</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path=""><a href="#determine-data-mining-goals"><i class="fa fa-check"></i><b>1.3</b> Determine Data Mining Goals</a><ul>
+<li class="chapter" data-level="1.3.1" data-path=""><a href="#data-mining-goals"><i class="fa fa-check"></i><b>1.3.1</b> Data Mining Goals</a></li>
+<li class="chapter" data-level="1.3.2" data-path=""><a href="#data-mining-success-criteria"><i class="fa fa-check"></i><b>1.3.2</b> Data Mining Success Criteria</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path=""><a href="#produce-project-plan"><i class="fa fa-check"></i><b>1.4</b> Produce Project Plan</a><ul>
+<li class="chapter" data-level="1.4.1" data-path=""><a href="#project-plan"><i class="fa fa-check"></i><b>1.4.1</b> Project Plan</a></li>
+<li class="chapter" data-level="1.4.2" data-path=""><a href="#initial-assessment-of-tools-and-techniques"><i class="fa fa-check"></i><b>1.4.2</b> Initial Assessment of Tools and Techniques</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path=""><a href="#data-understanding-and-preparation-cycle-1"><i class="fa fa-check"></i><b>2</b> Data Understanding and Preparation Cycle 1</a><ul>
+<li class="chapter" data-level="2.1" data-path=""><a href="#data-understanding"><i class="fa fa-check"></i><b>2.1</b> Data Understanding</a><ul>
+<li class="chapter" data-level="2.1.1" data-path=""><a href="#collect-initial-data"><i class="fa fa-check"></i><b>2.1.1</b> Collect Initial Data</a></li>
+<li class="chapter" data-level="2.1.2" data-path=""><a href="#describe-data"><i class="fa fa-check"></i><b>2.1.2</b> Describe Data</a></li>
+<li class="chapter" data-level="2.1.3" data-path=""><a href="#explore-data"><i class="fa fa-check"></i><b>2.1.3</b> Explore Data</a></li>
+<li class="chapter" data-level="2.1.4" data-path=""><a href="#verify-data-quality"><i class="fa fa-check"></i><b>2.1.4</b> Verify Data Quality</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path=""><a href="#data-preparation"><i class="fa fa-check"></i><b>2.2</b> Data Preparation</a><ul>
+<li class="chapter" data-level="2.2.1" data-path=""><a href="#select-data"><i class="fa fa-check"></i><b>2.2.1</b> Select Data</a></li>
+<li class="chapter" data-level="2.2.2" data-path=""><a href="#clean-data"><i class="fa fa-check"></i><b>2.2.2</b> Clean Data</a></li>
+<li class="chapter" data-level="2.2.3" data-path=""><a href="#construct-data"><i class="fa fa-check"></i><b>2.2.3</b> Construct Data</a></li>
+<li class="chapter" data-level="2.2.4" data-path=""><a href="#integrate-data"><i class="fa fa-check"></i><b>2.2.4</b> Integrate Data</a></li>
+<li class="chapter" data-level="2.2.5" data-path=""><a href="#format-data"><i class="fa fa-check"></i><b>2.2.5</b> Format Data</a></li>
+<li class="chapter" data-level="2.2.6" data-path=""><a href="#dataset"><i class="fa fa-check"></i><b>2.2.6</b> Dataset</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">CRISP-DM Project Writeup</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="header">
+<h1 class="title">CRISP-DM Project Writeup</h1>
+<p class="author"><em>Ben Jaeger</em></p>
+<p class="date"><em>06 December, 2020</em></p>
+</div>
+
+<div id="business-understanding" class="section level1">
+<h1><span class="header-section-number">Chapter 1</span> Business Understanding</h1>
+<p>Placeholder</p>
+<div id="determine-business-objectives" class="section level2">
+<h2><span class="header-section-number">1.1</span> Determine Business Objectives</h2>
+<div id="background" class="section level3">
+<h3><span class="header-section-number">1.1.1</span> Background</h3>
+</div>
+<div id="business-objectives" class="section level3">
+<h3><span class="header-section-number">1.1.2</span> Business Objectives</h3>
+</div>
+<div id="business-success-criteria" class="section level3">
+<h3><span class="header-section-number">1.1.3</span> Business Success Criteria</h3>
+</div>
+</div>
+<div id="assess-situation" class="section level2">
+<h2><span class="header-section-number">1.2</span> Assess Situation</h2>
+<div id="inventory-of-resources" class="section level3">
+<h3><span class="header-section-number">1.2.1</span> Inventory of Resources</h3>
+</div>
+<div id="requirements-assumptions-and-constraints" class="section level3">
+<h3><span class="header-section-number">1.2.2</span> Requirements, Assumptions, and Constraints</h3>
+</div>
+<div id="risks-and-contingencies" class="section level3">
+<h3><span class="header-section-number">1.2.3</span> Risks and Contingencies</h3>
+</div>
+<div id="terminology" class="section level3">
+<h3><span class="header-section-number">1.2.4</span> Terminology</h3>
+</div>
+<div id="costs-and-benefits" class="section level3">
+<h3><span class="header-section-number">1.2.5</span> Costs and Benefits</h3>
+</div>
+</div>
+<div id="determine-data-mining-goals" class="section level2">
+<h2><span class="header-section-number">1.3</span> Determine Data Mining Goals</h2>
+<div id="data-mining-goals" class="section level3">
+<h3><span class="header-section-number">1.3.1</span> Data Mining Goals</h3>
+</div>
+<div id="data-mining-success-criteria" class="section level3">
+<h3><span class="header-section-number">1.3.2</span> Data Mining Success Criteria</h3>
+</div>
+</div>
+<div id="produce-project-plan" class="section level2">
+<h2><span class="header-section-number">1.4</span> Produce Project Plan</h2>
+<div id="project-plan" class="section level3">
+<h3><span class="header-section-number">1.4.1</span> Project Plan</h3>
+</div>
+<div id="initial-assessment-of-tools-and-techniques" class="section level3">
+<h3><span class="header-section-number">1.4.2</span> Initial Assessment of Tools and Techniques</h3>
+
+</div>
+</div>
+</div>
+<div id="data-understanding-and-preparation-cycle-1" class="section level1">
+<h1><span class="header-section-number">Chapter 2</span> Data Understanding and Preparation Cycle 1</h1>
+<p>Placeholder</p>
+<div id="data-understanding" class="section level2">
+<h2><span class="header-section-number">2.1</span> Data Understanding</h2>
+<div id="collect-initial-data" class="section level3">
+<h3><span class="header-section-number">2.1.1</span> Collect Initial Data</h3>
+<div id="initial-data-collection-report" class="section level4">
+<h4><span class="header-section-number">2.1.1.1</span> Initial Data Collection Report</h4>
+</div>
+</div>
+<div id="describe-data" class="section level3">
+<h3><span class="header-section-number">2.1.2</span> Describe Data</h3>
+<div id="data-description-report" class="section level4">
+<h4><span class="header-section-number">2.1.2.1</span> Data Description Report</h4>
+</div>
+</div>
+<div id="explore-data" class="section level3">
+<h3><span class="header-section-number">2.1.3</span> Explore Data</h3>
+<div id="data-exploration-report" class="section level4">
+<h4><span class="header-section-number">2.1.3.1</span> Data Exploration Report</h4>
+</div>
+</div>
+<div id="verify-data-quality" class="section level3">
+<h3><span class="header-section-number">2.1.4</span> Verify Data Quality</h3>
+<div id="data-quality-report" class="section level4">
+<h4><span class="header-section-number">2.1.4.1</span> Data Quality Report</h4>
+</div>
+</div>
+</div>
+<div id="data-preparation" class="section level2">
+<h2><span class="header-section-number">2.2</span> Data Preparation</h2>
+<div id="select-data" class="section level3">
+<h3><span class="header-section-number">2.2.1</span> Select Data</h3>
+<div id="rationale-for-inclusionexclusion" class="section level4">
+<h4><span class="header-section-number">2.2.1.1</span> Rationale for Inclusion/Exclusion</h4>
+</div>
+</div>
+<div id="clean-data" class="section level3">
+<h3><span class="header-section-number">2.2.2</span> Clean Data</h3>
+<div id="data-cleaning-report" class="section level4">
+<h4><span class="header-section-number">2.2.2.1</span> Data Cleaning Report</h4>
+</div>
+</div>
+<div id="construct-data" class="section level3">
+<h3><span class="header-section-number">2.2.3</span> Construct Data</h3>
+<div id="derived-attributes" class="section level4">
+<h4><span class="header-section-number">2.2.3.1</span> Derived Attributes</h4>
+</div>
+<div id="generated-records" class="section level4">
+<h4><span class="header-section-number">2.2.3.2</span> Generated Records</h4>
+</div>
+</div>
+<div id="integrate-data" class="section level3">
+<h3><span class="header-section-number">2.2.4</span> Integrate Data</h3>
+<div id="merged-data" class="section level4">
+<h4><span class="header-section-number">2.2.4.1</span> Merged Data</h4>
+</div>
+</div>
+<div id="format-data" class="section level3">
+<h3><span class="header-section-number">2.2.5</span> Format Data</h3>
+<div id="reformatted-data" class="section level4">
+<h4><span class="header-section-number">2.2.5.1</span> Reformatted Data</h4>
+</div>
+</div>
+<div id="dataset" class="section level3">
+<h3><span class="header-section-number">2.2.6</span> Dataset</h3>
+<div id="dataset-description" class="section level4">
+<h4><span class="header-section-number">2.2.6.1</span> Dataset Description</h4>
+
+</div>
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["reports.pdf", "reports.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

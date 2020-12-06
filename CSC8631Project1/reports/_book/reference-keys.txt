@@ -1,13 +1,4 @@
-fig:nice-fig
-tab:nice-tab
-prerequisites
-intro
-literature
-methods
-applications
-example-one
-example-two
-final-words
+sjdhggvo
 business-understanding
 determine-business-objectives
 background
@@ -25,6 +16,7 @@ data-mining-success-criteria
 produce-project-plan
 project-plan
 initial-assessment-of-tools-and-techniques
+data-understanding-and-preparation-cycle-1
 data-understanding
 collect-initial-data
 initial-data-collection-report
@@ -34,6 +26,7 @@ explore-data
 data-exploration-report
 verify-data-quality
 data-quality-report
+data-preparation
 select-data
 rationale-for-inclusionexclusion
 clean-data

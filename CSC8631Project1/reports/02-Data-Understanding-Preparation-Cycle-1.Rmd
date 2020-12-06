@@ -1,47 +1,47 @@
-# Data Understanding
+# Data Understanding and Preparation Cycle 1
 
-## Collect Initial Data
+## Data Understanding
 
-### Initial Data Collection Report  
+### Collect Initial Data
 
-## Describe Data
+#### Initial Data Collection Report  
 
-### Data Description Report  
+### Describe Data
 
-## Explore Data
+#### Data Description Report  
 
-### Data Exploration Report  
+### Explore Data
 
-## Verify Data Quality
+#### Data Exploration Report  
 
-### Data Quality Report  
+### Verify Data Quality
+
+#### Data Quality Report  
 
 
-\newpage
+## Data Preparation
 
-# Data Preparation
+### Select Data
 
-## Select Data
+#### Rationale for Inclusion/Exclusion  
 
-### Rationale for Inclusion/Exclusion  
+### Clean Data
 
-## Clean Data
+#### Data Cleaning Report  
 
-### Data Cleaning Report  
+### Construct Data
 
-## Construct Data
+#### Derived Attributes  
+#### Generated Records  
 
-### Derived Attributes  
-### Generated Records  
+### Integrate Data
 
-## Integrate Data
+#### Merged Data  
 
-### Merged Data  
+### Format Data
 
-## Format Data
+#### Reformatted Data  
 
-### Reformatted Data  
+### Dataset
 
-## Dataset
-
-### Dataset Description  
+#### Dataset Description  
