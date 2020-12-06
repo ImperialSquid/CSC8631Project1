@@ -1,0 +1,47 @@
+# Data Understanding
+
+## Collect Initial Data
+
+### Initial Data Collection Report  
+
+## Describe Data
+
+### Data Description Report  
+
+## Explore Data
+
+### Data Exploration Report  
+
+## Verify Data Quality
+
+### Data Quality Report  
+
+
+\newpage
+
+# Data Preparation
+
+## Select Data
+
+### Rationale for Inclusion/Exclusion  
+
+## Clean Data
+
+### Data Cleaning Report  
+
+## Construct Data
+
+### Derived Attributes  
+### Generated Records  
+
+## Integrate Data
+
+### Merged Data  
+
+## Format Data
+
+### Reformatted Data  
+
+## Dataset
+
+### Dataset Description  

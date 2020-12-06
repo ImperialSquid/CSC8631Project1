@@ -1,0 +1,25 @@
+# Business Understanding
+
+## Determine Business Objectives
+
+### Background  
+### Business Objectives  
+### Business Success Criteria  
+
+## Assess Situation
+
+### Inventory of Resources  
+### Requirements, Assumptions, and Constraints  
+### Risks and Contingencies  
+### Terminology  
+### Costs and Benefits  
+
+## Determine Data Mining Goals
+
+### Data Mining Goals  
+### Data Mining Success Criteria  
+
+## Produce Project Plan
+
+### Project Plan  
+### Initial Assessment of Tools and Techniques  
