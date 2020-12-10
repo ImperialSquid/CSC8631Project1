@@ -3,45 +3,196 @@
 ## Data Understanding
 
 ### Collect Initial Data
-
-#### Initial Data Collection Report  
+Initial data collection conssited only of downloading a zip folder of CSVs and unzipping it, along with importing the data with project template
 
 ### Describe Data
+The datasets were given a quick descriptive overview in \@ref(background) but a more detailed look at the data in each is given in the table below:
 
-#### Data Description Report  
+(@) Archetypes
 
-### Explore Data
++----------------------------------+--------------------------------------------------+-----------+
+| Columns                          | Description                                      | Type      |
++==================================+==================================================+===========+
+| id\                              | Numeric identifier, holds no specific info\      | Integer\  |
+| learner_id\                      | String identifier of a participant\              | String\   |
+| responded_at\                    | Datetime of info being received\                 | Datetime\ |
+| archetype                        | Archetype of participant, one of eight factors   | String    |
++----------------------------------+--------------------------------------------------+-----------+
 
-#### Data Exploration Report  
+(@) Enrolments
 
-### Verify Data Quality
++----------------------------------+--------------------------------------------------+-----------+
+| Columns                          | Description                                      | Type      |
++==================================+==================================================+===========+
+| learner_id\                      | String identifier of a participant\              | String\   |
+| enrolled_at\                     | Datetime of enrolment\                           | Datetime\ |
+| unenrolled_at\                   | Datetime of unenrolment\                         | Datetime\ |
+| role\                            | Participant role within course\                  | String\   |
+| fully_participated_at\           | Datetime of course completion\                   | Datetime\ |
+| purchased_statement_at\          | Datetime of statement purchase\                  | Datetime\ |
+| gender\                          | Gender of participant\                           | String\   |
+| country\                         | Reported country of participant\                 | String\   |
+| age_range\                       | Age range of participant\                        | String\   |
+| highest_education_level\         | Education level of participant\                  | String\   |
+| employment_status\               | Employment status of participant\                | String\   |
+| employment_area\                 | employment area of participant\                  | String\   |
+| detected_country                 | Detected country of participant                  | String    |
++----------------------------------+--------------------------------------------------+-----------+
 
-#### Data Quality Report  
+(@) Leaving
+
++----------------------------------+--------------------------------------------------+-----------+
+| Columns                          | Description                                      | Type      |
++==================================+==================================================+===========+
+| id\                              | Numeric identifier, holds no specific info\      | Integer\  |
+| learner_id\                      | String identifier of a participant\              | String\   |
+| left_at\                         | Datetime of participant departure\               | Datetime\ |
+| leaving_reason\                  | Given reason for departure\                      | String\   |
+| last_completed_step_at\          | Datetime of last completed step\                 | Datetime\ |
+| last_completed_step\             | Last completed step\                             | String\   |
+| last_completed_week_number\      | Last week completed\                             | Integer\  |
+| last_completed_step_number       | Last step completed                              | Integer   |
++----------------------------------+--------------------------------------------------+-----------+
+
+(@) Members
+
++----------------------------------+--------------------------------------------------+-----------+
+| Columns                          | Description                                      | Type      |
++==================================+==================================================+===========+
+| id\                              | Numeric identifier, holds no specific info\      | Integer\  |
+| first_name\                      | First name of member *(redacted for privacy)*\   | String\   |
+| last_name\                       | Last name of member *(redacted for privacy)*\    | String\   |
+| team_role\                       | Team role of member\                             | String\   |
+| user_role                        | User role of member                              | String    |
++----------------------------------+--------------------------------------------------+-----------+
+
+(@) Quiz Responses
+
++----------------------------------+--------------------------------------------------+-----------+
+| Columns                          | Description                                      | Type      |
++==================================+==================================================+===========+
+| learner_id\                      | String identifier of a participant\              | String\   |
+| quiz_question\                   | Question asked\                                  | String\   |
+| question_type\                   | Type of question\                                | String\   |
+| week_number\                     | Week in which question was asked\                | Integer\  |
+| step_number\                     | Step in which question was asked\                | Integer\  |
+| question_number\                 | Number of question\                              | Integer\  |
+| response\                        | Response given by participant\                   | String\   |
+| cloze_response\                  | Response given by participant\                   | String\   |
+| submitted_at\                    | Datetime of question being answered\             | Datetime\ |
+| correct                          | Correct/incorrect answer?                        | Boolean   |
++----------------------------------+--------------------------------------------------+-----------+
+
+(@) Step Activity
+
++----------------------------------+--------------------------------------------------+-----------+
+| Columns                          | Description                                      | Type      |
++==================================+==================================================+===========+
+| learner_id\                      | String identifier of a participant\              | String\   |
+| step\                            | Step being accessed\                             | String\   |
+| week_number\                     | Week of step being accessed\                     | Integer\  |
+| step_number\                     | Number of step being accessed\                   | Integer\  |
+| first_visited_at\                | Datetime of first access\                        | Datetime\ |
+| last_completed_at                | Datetime of completion                           | Datetime  |
++----------------------------------+--------------------------------------------------+-----------+
+
+(@) Sentiments
+
++----------------------------------+--------------------------------------------------+-----------+
+| Columns                          | Description                                      | Type      |
++==================================+==================================================+===========+
+| id\                              | Numeric identifier, holds no specific info\      | Integer\  |
+| responded_at\                    | Datetime of sentiment submission\                | Datetime\ |
+| week_number\                     | Week being reviewed\                             | Integer\  |
+| experience_rating\               | Rating given for week of course\                 | Integer\  |
+| reason                           | Reason given for rating                          | String    |
++----------------------------------+--------------------------------------------------+-----------+
+
+(@) Video Stats
+
++----------------------------------+--------------------------------------------------+-----------+
+| Columns                          | Description                                      | Type      |
++==================================+==================================================+===========+
+| step_position\                   | Step of course for the video\                    | String\   |
+| title\                           | Title of video\                                  | String\   |
+| video_duration\                  | Length of video\                                 | Integer\  |
+| total_views\                     | Total views\                                     | Integer\  |
+| total_downloads\                 | Total downloads\                                 | Integer\  |
+| total_caption_views\             | Total captions viewed\                           | Integer\  |
+| total_transcript_views\          | Total transcript viewed\                         | Integer\  |
+| viewed_hd\                       | Times viewed in HD\                              | Integer\  |
+| viewed_five_percent\             | Percentage viewers who viewed 05% of video\      | Decimal\  |
+| viewed_ten_percent\              | Percentage viewers who viewed 10% of video\      | Decimal\  |
+| viewed_twentyfive_percent\       | Percentage viewers who viewed 25% of video\      | Decimal\  |
+| viewed_fifty_percent\            | Percentage viewers who viewed 50% of video\      | Decimal\  |
+| viewed_seventyfive_percent\      | Percentage viewers who viewed 75% of video\      | Decimal\  |
+| viewed_ninetyfive_percent\       | Percentage viewers who viewed 95% of video\      | Decimal\  |
+| viewed_onehundred_percent\       | Percentage viewers who viewed 100% of video\     | Decimal\  |
+| console_device_percentage\       | Percentage viewers who viewed on console\        | Decimal\  |
+| desktop_device_percentage\       | Percentage viewers who viewed on desktop\        | Decimal\  |
+| mobile_device_percentage\        | Percentage viewers who viewed on mobile\         | Decimal\  |
+| tv_device_percentage\            | Percentage viewers who viewed on tv devices\     | Decimal\  |
+| tablet_device_percentage\        | Percentage viewers who viewed on tablet\         | Decimal\  |
+| unknown_device_percentage\       | Percentage viewers who viewed on unknown device\ | Decimal\  |
+| europe_views_percentage\         | Percentage viewers in Europe\                    | Decimal\  |
+| oceania_views_percentage\        | Percentage viewers in Oceania\                   | Decimal\  |
+| asia_views_percentage\           | Percentage viewers in Asia\                      | Decimal\  |
+| north_america_views_percentage\  | Percentage viewers in N. America\                | Decimal\  |
+| south_america_views_percentage\  | Percentage viewers in S. America\                | Decimal\  |
+| africa_views_percentage\         | Percentage viewers in Africa\                    | Decimal\  |
+| antarctica_views_percentage      | Percentage viewers in Antarctica                 | Decimal   |
++----------------------------------+--------------------------------------------------+-----------+
+
 
 
 ## Data Preparation
 
 ### Select Data
+Due to this being the inital cycle of data cleaning and preparation, no data has been excluded at this stage
 
-#### Rationale for Inclusion/Exclusion  
+### Rationale for Inclusion/Exclusion  
+There is no reason to exclude data which may lead to insights, that said, as mentioned in \@ref(background) some data sets have literally no data in them, thus these data sets have been ignored and won't be imported for cleaning and analysis as they just clutter the workspace. Additionally, the sentiments dataset for session 5 has only one row in it and has thus also been excluded along the same lines.
 
 ### Clean Data
+Due to this being the first round of data cleaning there were a fair few cleaning steps taken.  
 
-#### Data Cleaning Report  
+The first, relatively minor, step taken was to rename the data imported from the automatic names given by ProjectTemplate to more readable names, they were renamed in the manner laid out in the table below: *\<num\> is a stand-in for the session number in the dataset name*
 
-### Construct Data
++------------------------------------------------------------+----------------------+
+| Renamed from                                               | Renamed to           |
++============================================================+======================+
+| * cyber.security.\<num\>_archetype.survey.responses        | * archetype_\<num\>  |
+| * cyber.security.\<num\>_enrolments                        | * enrolments_\<num\> |
+| * cyber.security.\<num\>_leaving.survey.responses          | * leaving_\<num\>    |
+| * cyber.security.\<num\>_question.response                 | * qresponses_\<num\> |
+| * cyber.security.\<num\>_step.activity                     | * sactivity_\<num\>  |
+| * cyber.security.\<num\>_team.members                      | * members_\<num\>    |
+| * cyber.security.\<num\>_video.stats                       | * vidstats_\<num\>   |
+| * cyber.security.\<num\>_weekly.sentiment.survey.responses | * sentiments_\<num\> |
++------------------------------------------------------------+----------------------+
 
-#### Derived Attributes  
-#### Generated Records  
+Next up was cleaning the data types of the columns in the data frames. The first of these was to entries into proper NA values rather than an empty string or "unknown", etc.  
 
-### Integrate Data
+The second area of cleaning was the datetime columns that appear in many of the datasets, these were all in string form which makes mathematical procedures on such data impossible, thus they were turned in a POSIXct type, which stores the datetime as seconds from 00:00 01/01/1970.
 
-#### Merged Data  
+``` {r}
+str_datetime = "2017-10-04 09:23:14 UTC"
+typeof(str_datetime)
+posixct_datetime = as.POSIXct(str_datetime, format = "%F %T UTC", tz = "GMT")
+typeof(posixct_datetime)
+```
 
-### Format Data
+Unfortunately, `as.POSIXct()` is not a vectorised function and so the conversions must be done one by one, additionally there are a lot of such conversions that need doing if it is to be done to all the datasets so this munge file was commented out after being made until the datasets being considered were reduced.
 
-#### Reformatted Data  
+The next item for cleaning were any columns with category factors, eg, the reason for leaving is one of 8 possible options that are consistent across all the sessions. (The opportunity was also taken to correct an encoding error where an apostrophe was encoded as "â€™").
 
-### Dataset
 
-#### Dataset Description  
+
+## Data Understanding and Preparation Cycle Summary
+
+### Summary of Work Done
+A lot of work was done in this cycle both with regards to exploring the data and cleaning it for future analysis. After doing all this, it was decided that the `learner-id` column was pivotal with regards to linking between datasets. 
+
+
+### Future Plans
+After the exploration done it was decided that the most interesting avenue would be to explore how various factors affected people scores on trhe quiz questions, the main datasets involved in this investigation would be the `enrolments` datasets as they hold information about the particpants, the other would be the `quiz responses` datasets as they hold information on the participant performance. The main challenge in combining these data sets would be to see how effectively the `learner-id` columns could be mapped onto each other.

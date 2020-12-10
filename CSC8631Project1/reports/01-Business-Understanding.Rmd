@@ -1,53 +1,138 @@
 # Business Understanding
-dfgadfg
 
 ## Determine Business Objectives
-adrga
 
-### Background  
-adrga
+### Background {#background}  
+The data provided comes from a course run by FutureLearn about computer security. The participants on the course come from a wide range of backgrounds, some are university students, some are from the private or public sectors, there is a wide range of age brackets that they can belong to and they can come from a variety of countries, among other factors. 
+The course was run seven times with start dates between 05/09/2016 and 10/09/2018 and a few datasets were made from each time a session was run. These data sets largely tracked the progress of the participants through the course, including their enrolment, question responses to quizzes, time taken per step of the session, etc. As more sessions were run, the content of the course and the data collected changed. The nature of the datasets provided is listed in the table below.
 
-### Business Objectives  
-ardgadr
++-------------+-----------------------+-------------------+
+| Dataset     | Description           | Sessions Used In  |
++=============+=======================+===================+
+| Archetypes  | A data set containing | Session 1-7\*     |
+|             | the "archetypes" of a |                   |
+|             | participant, 1 of 8   | \**sessions 1, 2* |
+|             | types                 | *are empty*       |
++-------------+-----------------------+-------------------+
+| Enrollments | A data set containing | Session 1-7       |
+|             | lots of data on the   |                   |
+|             | participants          |                   |
+|             | including when they   |                   |
+|             | joined and left the   |                   |
+|             | course, gender,       |                   |
+|             | nationality, age      |                   |
+|             | range and others      |                   |
+|             |                       |                   |
+|             |                       |                   |
+|             |                       |                   |
+|             |                       |                   |
+|             |                       |                   |
++-------------+-----------------------+-------------------+
+| Leaving     | A data set containing | Session 1-7\*     |
+|             | data about those who  |                   |
+|             | decided to leave the  |                   |
+|             | course early, when,   |                   |
+|             | why and how far they  | \**sessions 1, 2,*|
+|             | got                   | *3 are empty*     |
++-------------+-----------------------+-------------------+
+| Members     | A data set containing | Session 2-7       |
+|             | data about those      |                   |
+|             | members of            |                   |
+|             | FutureLearn running   |                   |
+|             | the course (names     |                   |
+|             | have been expunged)   |                   |
++-------------+-----------------------+-------------------+
+| Question    | A data set containing | Session 1-7       |
+| Responses   | containing each       |                   |
+|             | participant's answers |                   |
+|             | to the quiz questions |                   |
+|             | as well as whether or |                   |
+|             | not they're correct   |                   |
++-------------+-----------------------+-------------------+
+| Step        | A data set containing | Session 1-7       |
+| Activity    | data about each       |                   |
+|             | participant's         |                   |
+|             | progress through the  |                   |
+|             | steps of the course   |                   |
+|             |                       |                   |
++-------------+-----------------------+-------------------+
+| Sentiments  | A data set containing | Session 1-7\*     |
+|             | the participants      | \**sessions 1,*   |
+|             | sentiments about the  | *2, 3, 4 are*     |
+|             | course week by week   | *empty*           |
++-------------+-----------------------+-------------------+
+| Video       | A data set containing | Session 1-7\*     |
+| Statistics  | lots of data about    |                   |
+|             | the videos            |                   |
+|             | participants          |                   |
+|             | watch during the      | \**sessions 1, 2* |
+|             | course                | *are empty*       |
++-------------+-----------------------+-------------------+
 
-### Business Success Criteria  
-adergadr
+### Business Objectives and Success Criteria {#bObjectives}  
+This project was presented with no explicit questions to be answered or goals specified, thus the decision on what the ultimate goal of this project is will be reserved until some data has been explored and some insights gained.  
 
 
 ## Assess Situation
-drag
 
 ### Inventory of Resources  
-adrg
+Below are the resources available to the project:
 
-### Requirements, Assumptions, and Constraints  
-adrg
+**Personnel**: 
 
-### Risks and Contingencies  
-adrgard
+* Ben Jaeger, Big Data CDT student at Newcastle University  
+* Joe Matthews, lecturer in statistics in the School of Mathematics, Statistics and Physics at Newcastle University\*  
+* Matthew Forshaw, Senior Lecturer in Data Science and National Skills Lead to The Alan Turing Institute\*  
+
+\**Available to give advice/guidance only, no direct contributions will be made*  
+
+**Data**: 
+
+* All the data listed in section \@ref(background)
+* Any data or reference material found available freely online
+
+**Hardware**:
+
+* Ben Jaeger's personal PC   
+
+**Software**: 
+
+* R Studio (and any packages therein)  
+* Microsoft Excel  
+* Notepad++  
+* Mozilla Firefox  
+
+### Requirements, Assumptions, and Constraints {#RAC}  
+
+**Requirements**  
+This report is to be read by a technically literate audience and so need not stray away from technical details. There are no legal constraints surrounding the data to be used. The results need not be important (indeed verifying a lack of surprising information is in a way a result) though they should be of a reasonable statistical rigour. The main aim of the project is more to develop and become comfortable with a suite of tools which allow us to extract interesting insights in a *quick*, *reliable* and *repeatable* manner. The project report is to be a maximum of 20 pages. A project presentation video of approx. 5 minutes also needs to be produced.
+
+**Assumptions**  
+It is assumed the data set is complex but consistent enough to yeild interesting results. It is assumed the project can be completed on time\*. It is assumed the intended audience of the report is of a high technical experience so little explanation of statistical concepts is needed. It is assumed all the requirements of the project (data-/software-/hardware-/knowledge-wise) are already in-hand or freely available.  
+
+\**This was later proved false due to the mental health of the personnel invloved as mentioned in the Constraints section of section \@ref(RAC)*
+
+**Constraints**  
+The project is required to be finished by 23:45 on Friday 04/12/2020\*. Several other projects of this kind are being run in parallel, while advice on small problems can be given no work may be shared "verbatim or in substance without specific acknowledgement" between them in accordance with Newcastle University's rules regarding plagiarism.
+
+\**This was later amended by an extension to 11/12/2020*  
 
 ### Terminology  
-adrg
+For consistencies sake the following terms are defined with the following meanings:
 
-### Costs and Benefits  
-adrg
+* Course - refers to the course taken as a whole without specifying a session
+* Session - refers to a specific instance of the course being run (eg session 1 began 05/09/2016)
+* Step - refers to a subsection of the course such as a quiz, article, video or other
+* Participant - any person who took the course
 
 
 ## Determine Data Mining Goals
-adrg
 
-### Data Mining Goals  
-adrg
-
-### Data Mining Success Criteria  
-adrg
+### Data Mining Goals and Success Criteria  
+As previously mentioned in section \@ref(bObjectives) this project was presented with no explicit objective or question to answer and so a decision on this is reserved until some data exploration has been done.
 
 
 ## Produce Project Plan
-adrg
 
 ### Project Plan  
-adrgadr
-
-### Initial Assessment of Tools and Techniques  
-ardgadr
+The borad project plan is to do some initial data cleaning and exploration to gain a sense of what questions may be asked and answered using the dataset, a question or goal decided upon and then a few more cycles of cleaning and preparation until the data is fit to answer said question in whatever way seems fit, possibly graphically, possibly using some statisical tests, whatever is appropriate.

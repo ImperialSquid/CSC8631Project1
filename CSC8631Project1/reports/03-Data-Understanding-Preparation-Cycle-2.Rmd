@@ -1,0 +1,41 @@
+# Data Understanding and Preparation Cycle 2
+
+### Explore Data
+The first goal of this round of exploration and cleaning was to see if the `learner-id` columns of the `enrolments` and `quiz responses` datasets could be mapped onto each other, 
+
+### Verify Data Quality
+
+#### Data Quality Report
+
+
+
+## Data Preparation
+
+### Select Data
+
+#### Rationale for Inclusion/Exclusion  
+
+### Clean Data
+
+#### Data Cleaning Report  
+
+### Construct Data
+
+#### Derived Attributes  
+#### Generated Records  
+
+### Integrate Data
+
+#### Merged Data  
+
+### Format Data
+
+#### Reformatted Data  
+
+### Dataset
+
+#### Dataset Description  
+
+  
+
+

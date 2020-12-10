@@ -1,3 +1,5 @@
+bookdown::pdf_document2:
+bookdown::word_document2:
 bookdown::gitbook:
   css: style.css
   config:
