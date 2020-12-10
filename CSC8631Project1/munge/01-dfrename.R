@@ -22,4 +22,3 @@ rm(varib_name)
 rm(varib_num)
 rm(new_names)
 
-
