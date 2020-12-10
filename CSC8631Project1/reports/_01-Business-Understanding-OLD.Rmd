@@ -1,0 +1,184 @@
+# Business Understanding
+
+## Determine Business Objectives
+
+### Background {#background}  
+The data provided comes from a course run by FutureLearn about computer security. The people on the course come from a wide range of backgrounds, some are university students, some are from the private or public sectors, there is a wide range of age brackets that they can belong to and they can come from a variety of countries. 
+The course was run seven times between 05/09/2016 and 10/09/2018 and a few datasets were made from each time the course was run. These data sets largely tracked the progress of the course members through the course, including their enrolment, question responses to quizzes, time taken per step of the course, etc. As more courses were run, the content of the course and the data collected changed. The nature of the datasets provided is listed in the table below.
+
++-------------+-----------------------+----------------------------------+-------------------+
+| Dataset     | Description           | Columns                          | Sessions Used In  |
++=============+=======================+==================================+===================+
+| Archetypes  | A data set containing | * id                             | Session 1-7\*     |
+|             | the "archetypes" of a | * learner_id                     |                   |
+|             | participant, 1 of 8   | * responded_at                   | \**sessions 1, 2* |
+|             | types                 | * archetype                      | *are empty*       |
++-------------+-----------------------+----------------------------------+-------------------+
+| Enrollments | A data set containing | * learner_id                     | Session 1-7       |
+|             | lots of data on the   | * enrolled_at                    |                   |
+|             | participants          | * unenrolled_at                  |                   |
+|             | including when they   | * role                           |                   |
+|             | joined and left the   | * fully_participated_at          |                   |
+|             | course, gender,       | * purchased_statement_at         |                   |
+|             | nationality, age      | * gender                         |                   |
+|             | range and others      | * country                        |                   |
+|             |                       | * age_range                      |                   |
+|             |                       | * highest_education_level        |                   |
+|             |                       | * employment_status              |                   |
+|             |                       | * employment_area                |                   |
+|             |                       | * detected_country               |                   |
++-------------+-----------------------+----------------------------------+-------------------+
+| Leaving     | A data set containing | * id                             | Session 1-7\*     |
+|             | data about those who  | * learner_id                     |                   |
+|             | decided to leave the  | * left_at                        |                   |
+|             | course early, when,   | * leaving_reason                 |                   |
+|             | why and how far they  | * last_completed_step_at         |                   |
+|             | got                   | * last_completed_step            |                   |
+|             |                       | * last_completed_week_number     | \**sessions 1, 2,*|
+|             |                       | * last_completed_step_number     | *3 are empty*     |
++-------------+-----------------------+----------------------------------+-------------------+
+| Members     | A data set containing | * id                             | Session 2-7       |
+|             | data about those      | * first_name                     |                   |
+|             | members of            | * last_name                      |                   |
+|             | FutureLearn running   | * team_role                      |                   |
+|             | the course (names     | * user_role                      |                   |
+|             | have been expunged)   |                                  |                   |
++-------------+-----------------------+----------------------------------+-------------------+
+| Question    | A data set containing | * learner_id                     | Session 1-7       |
+| Responses   | containing each       | * quiz_question                  |                   |
+|             | participant's answers | * question_type                  |                   |
+|             | to the quiz questions | * week_number                    |                   |
+|             | as well as whether or | * step_number                    |                   |
+|             | not they're correct   | * question_number                |                   |
+|             |                       | * response                       |                   |
+|             |                       | * cloze_response                 |                   |
+|             |                       | * submitted_at                   |                   |
+|             |                       | * correct                        |                   |
++-------------+-----------------------+----------------------------------+-------------------+
+| Step        | A data set containing | * learner_id                     | Session 1-7       |
+| Activity    | data about each       | * step                           |                   |
+|             | participant's         | * week_number                    |                   |
+|             | progress through the  | * step_number                    |                   |
+|             | steps of the course   | * first_visited_at               |                   |
+|             |                       | * last_completed_at              |                   |
++-------------+-----------------------+----------------------------------+-------------------+
+| Sentiments  | A data set containing | * id                             | Session 1-7\*     |
+|             | the participants      | * responded_at                   |                   |
+|             | sentiments about the  | * week_number                    |                   |
+|             | course week by week   | * experience_rating              | \**sessions 1,*   |
+|             |                       | * reason                         | *2, 3, 4 are*     |
+|             |                       |                                  | *empty*           |
++-------------+-----------------------+----------------------------------+-------------------+
+| Video       | A data set containing | * step_position                  | Session 1-7\*     |
+| Statistics  | lots of data about    | * title                          |                   |
+|             | the videos            | * video_duration                 |                   |
+|             | participants          | * total_views                    |                   |
+|             | watch during the      | * total_downloads                |                   |
+|             | course                | * total_caption_views            |                   |
+|             |                       | * total_transcript_views         |                   |
+|             |                       | * viewed_hd                      |                   |
+|             |                       | * viewed_five_percent            |                   |
+|             |                       | * viewed_ten_percent             |                   |
+|             |                       | * viewed_twentyfive_percent      |                   |
+|             |                       | * viewed_fifty_percent           |                   |
+|             |                       | * viewed_seventyfive_percent     |                   |
+|             |                       | * viewed_ninetyfive_percent      |                   |
+|             |                       | * viewed_onehundred_percent      |                   |
+|             |                       | * console_device_percentage      |                   |
+|             |                       | * desktop_device_percentage      |                   |
+|             |                       | * mobile_device_percentage       |                   |
+|             |                       | * tv_device_percentage           |                   |
+|             |                       | * tablet_device_percentage       |                   |
+|             |                       | * unknown_device_percentage      |                   |
+|             |                       | * europe_views_percentage        |                   |
+|             |                       | * oceania_views_percentage       |                   |
+|             |                       | * asia_views_percentage          |                   |
+|             |                       | * north_america_views_percentage |                   |
+|             |                       | * south_america_views_percentage |                   |
+|             |                       | * africa_views_percentage        | \**sessions 1, 2* |
+|             |                       | * antarctica_views_percentage    | *are empty*       |
++-------------+-----------------------+----------------------------------+-------------------+
+
+### Business Objectives and Success Criteria  
+This project was presented with no explicit questions to be answered or goals specified, thus the decision on what the ultimate goal of this project is will be reserved until some data has been explored and some insights gained.  
+
+
+## Assess Situation
+
+### Inventory of Resources  
+Below are the resources available to the project:
+
+Personnel: 
+
+* Ben Jaeger, Big Data CDT student at Newcastle University  
+* Joe Matthews, lecturer in statistics in the School of Mathematics, Statistics and Physics at Newcastle University\*  
+* Matthew Forshaw, Senior Lecturer in Data Science and National Skills Lead to The Alan Turing Institute\*  
+
+\**Available to give advice/guidance only, no direct contributions will be made*  
+
+Data: 
+
+* All the data listed in section \@ref(background)
+* Any data or reference material found available freely online
+
+Hardware:
+
+* Ben Jaeger's personal PC  
+  + Operating System: Windows 10 Home  
+  + CPU Model: Intel Core i5  
+  + Processor Speed: 4.1 GHz  
+  + RAM Size: 16 GB  
+  + Graphics Co-processor: GeForce Nvidia RTX 2060 6GB  
+  + Hard disk description: SSD  
+
+Software: 
+
+* R Studio (and any packages therein)  
+* Microsoft Excel  
+* Notepad++  
+* Mozilla Firefox  
+
+### Requirements, Assumptions, and Constraints {#RAC}  
+
+**Requirements**  
+This report is to be read by a technically literate audience and so need not stray away from technical details. There are no legal constraints surrounding the data to be used. The results need not be important (indeed verifying a lack of surprising information is in a way a result) though they should be of a reasonable statistical rigour. The main aim of the project is more to develop and become comfortable with a suite of tools which allow us to extract interesting insights in a *quick*, *reliable* and *repeatable* manner. The results are
+
+**Assumptions**  
+It is assumed the data set is complex but consistent enough to yeild interesting results. It is assumed the project can be completed on time\*. It is assumed the intended audience of the report is of a high technical experience so little explanation of statistical concepts is needed. It is assumed all the requirements of the project (data-/software-/hardware-/knowledge-wise) are already in-hand or freely available.  
+
+\**This was later proved false due to the mental health of the personnel invloved as mentioned in the Constraints section of section \@ref(RAC)*
+<!-- Clarify all assumptions (including implicit ones) and make them explicit (e.g., to address the businessquestion, a minimum number of customers with age above 50 is necessary)■List assumptions on data quality (e.g., accuracy, availability)■List assumptions on external factors (e.g., economicissues, competitive products, technical advances)■Clarify assumptions that lead to any of the estimates (e.g., the price of a specific tool is assumed to be lower than $1,000)■List all assumptions regarding whether it is necessary to understand and describe or explain the model(e.g., how should the model and results be presented to senior management/sponsor) -->
+
+**Constraints**  
+The project is required to be finished by 23:45 on Friday 04/12/2020\*. Several other projects of this kind are being run in parallel, while advice on small problems can be given no work may be shared "verbatim or in substance without specific acknowledgement" between them in accordance with Newcastle University's rules regarding plagiarism.
+
+\**This was later amended by an extension to 11/12/2020*  
+
+### Risks and Contingencies  
+adrgard
+
+### Terminology  
+adrg
+
+### Costs and Benefits  
+adrg
+
+
+## Determine Data Mining Goals
+adrg
+
+### Data Mining Goals  
+adrg
+
+### Data Mining Success Criteria  
+adrg
+
+
+## Produce Project Plan
+adrg
+
+### Project Plan  
+adrgadr
+
+### Initial Assessment of Tools and Techniques  
+ardgadr
