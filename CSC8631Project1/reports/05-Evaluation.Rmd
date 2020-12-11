@@ -1,0 +1,21 @@
+# Evaluation
+
+## Evaluate Results
+
+### Assessment of Data Mining Results w.r.t. Business Success Criteria   
+Given that the project was presented without a specific goal, that criterion isn't available for comparison. Against the goal that was set in section \@ref(futurePlans1), evaluating how gender affects quiz performance, it is very fair to say the project has succeeded in finding a statistically rigorous result.
+
+## Review Process
+
+### Review of Process  
+The overall process of finding this result was reasonably efficient given it was a goal that wasn't set in the beginning, some work could have been streamlined, the munging of datetimes for example was ultimately unnecessary. However, it can be argued, given the goal which ultimately didn't need that work hadn't been set, the work done might have been worthy in some other world where some other goal was set.
+
+## Determine Next Steps
+
+### Next Steps
+With these results found, the next steps are to:
+
+* Finish this report
+* Write a report on how CRISP-DM was implemented in this project and how it went
+* Record an oral presentatiopn of the work done
+* Collect the relevent files together for submission
