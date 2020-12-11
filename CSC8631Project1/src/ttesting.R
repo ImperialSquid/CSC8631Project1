@@ -17,26 +17,3 @@ for (i in 1:7){
   t = t.test(x=m_percents, y=f_percents)
   print(paste(t$estimate[1], t$estimate[2], t$statistic, t$p.value))
 }
-
-
-m_percents
-f_percents
-
-
-# Proof of equation summing to 1
-sum(df$correct[na.omit(df$quiz_question == q &
-                         df$gender == "male")] == "true") /
-  length(df$correct[na.omit(df$quiz_question == q &
-                              (df$gender == "male" | df$gender == "female"))]) +
-sum(df$correct[na.omit(df$quiz_question == q &
-                         df$gender == "female")] == "true") /
-  length(df$correct[na.omit(df$quiz_question == q &
-                              (df$gender == "male" | df$gender == "female"))]) +
-sum(df$correct[na.omit(df$quiz_question == q &
-                         df$gender == "male")] == "false") /
-  length(df$correct[na.omit(df$quiz_question == q &
-                              (df$gender == "male" | df$gender == "female"))]) +
-sum(df$correct[na.omit(df$quiz_question == q &
-                         df$gender == "female")] == "false") /
-  length(df$correct[na.omit(df$quiz_question == q &
-                              (df$gender == "male" | df$gender == "female"))])

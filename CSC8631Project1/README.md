@@ -1,39 +1,70 @@
 # CSC8631Project1
 
-Welcome to ProjectTemplate!
+The project tree looks as you see below. In particular the import files are:
 
-This file introduces you to ProjectTemplate, but you should eventually replace
-the contents of this file with an introduction to your project. People who
-work with your data in the future will thank you for it, including your future
-self.
+* Main report: found at ./report/_book/reports.pdf
+* Munging scripts: found in ./munging
+* Graphing scripts: found at ./graphs/graph.R
+* stats scripts: found at ./src/ttesting/R
 
-ProjectTemplate is an R package that helps you organize your statistical
-analysis projects. Since you're reading this file, we'll assume that you've
-already called `create.project()` to set up this project and all of its
-contents.
 
-To load your new project, you'll first need to `setwd()` into the directory
-where this README file is located. Then you need to run the following two
-lines of R code:
-
-	library('ProjectTemplate')
-	load.project()
-
-After you enter the second line of code, you'll see a series of automated
-messages as ProjectTemplate goes about doing its work. This work involves:
-* Reading in the global configuration file contained in `config`.
-* Loading any R packages you listed in the configuration file.
-* Reading in any datasets stored in `data` or `cache`.
-* Preprocessing your data using the files in the `munge` directory.
-
-Once that's done, you can execute any code you'd like. For every analysis
-you create, we'd recommend putting a separate file in the `src` directory.
-If the files start with the two lines mentioned above:
-
-	library('ProjectTemplate')
-	load.project()
-
-You'll have access to all of your data, already fully preprocessed, and
-all of the libraries you want to use.
-
-For more details about ProjectTemplate, see http://projecttemplate.net
++-- cache
+|   +-- \*MANY cache files\*
+|   \-- README.md
++-- config
+|   +-- global.dcf
+|   \-- README.md
++-- data
+|   +-- \* The CSVs containing the original data \*
+|   \-- README.md
++-- diagnostics
+|   +-- 1.R
+|   \-- README.md
++-- docs
+|   \-- README.md
++-- graphs
+|   +-- graph.R
+|   \-- README.md
++-- lib
+|   +-- globals.R
+|   +-- helpers.R
+|   \-- README.md
++-- logs
+|   \-- README.md
++-- munge
+|   +-- 01-dfrename.R
+|   +-- 02-correctNAs.R
+|   +-- 03-datetimes.R
+|   +-- 04-factorise.R
+|   +-- 05-mergedf.R
+|   \-- README.md
++-- profiling
+|   +-- 1.R
+|   \-- README.md
++-- README.md
++-- reports
+|   +-- 01-Business-Understanding.Rmd
+|   +-- 02-Data-Understanding-Preparation-Cycle-1.Rmd
+|   +-- 03-Data-Understanding-Preparation-Cycle-2.Rmd
+|   +-- 04-Modelling.Rmd
+|   +-- 05-Evaluation.Rmd
+|   +-- 06-Deployment.Rmd
+|   +-- index.Rmd
+|   +-- README.md
+|   +-- style.css
+|   +-- _01-Business-Understanding-OLD.Rmd
+|   +-- _book
+|   |   \-- reports.pdf
+|   +-- _bookdown.yml
+|   +-- _CRISP-DM Project 1 Writeup.Rmd
+|   \-- _output.yml
++-- src
+|   +-- build_report.R
+|   +-- eda.R
+|   +-- filterqresponses.R
+|   +-- README.md
+|   \-- ttesting.R
++-- tests
+|   +-- 1.R
+|   \-- README.md
+\-- TODO
