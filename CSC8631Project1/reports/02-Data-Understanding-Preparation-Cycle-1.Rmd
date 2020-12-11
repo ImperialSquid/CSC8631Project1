@@ -194,5 +194,5 @@ The next item for cleaning were any columns with category factors, eg, the reaso
 A lot of work was done in this cycle both with regards to exploring the data and cleaning it for future analysis. After doing all this, it was decided that the `learner-id` column was pivotal with regards to linking between datasets. 
 
 
-### Future Plans
-After the exploration done it was decided that the most interesting avenue would be to explore how various factors affected people scores on trhe quiz questions, the main datasets involved in this investigation would be the `enrolments` datasets as they hold information about the particpants, the other would be the `quiz responses` datasets as they hold information on the participant performance. The main challenge in combining these data sets would be to see how effectively the `learner-id` columns could be mapped onto each other.
+### Future Plans {#futurePlans1}
+After the exploration done it was decided that the most interesting avenue would be to explore how a factor like gender affected people scores on the quiz questions, the main datasets involved in this investigation would be the `enrolments` datasets as they hold information about the participants, the other would be the `quiz responses` datasets as they hold information on the participant performance. The main challenge in combining these data sets would be to see how effectively the `learner-id` columns could be mapped onto each other.

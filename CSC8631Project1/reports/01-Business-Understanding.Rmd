@@ -3,7 +3,6 @@
 ## Determine Business Objectives
 
 ### Background {#background}  
-The data provided comes from a course run by FutureLearn about computer security. The participants on the course come from a wide range of backgrounds, some are university students, some are from the private or public sectors, there is a wide range of age brackets that they can belong to and they can come from a variety of countries, among other factors. 
 The course was run seven times with start dates between 05/09/2016 and 10/09/2018 and a few datasets were made from each time a session was run. These data sets largely tracked the progress of the participants through the course, including their enrolment, question responses to quizzes, time taken per step of the session, etc. As more sessions were run, the content of the course and the data collected changed. The nature of the datasets provided is listed in the table below.
 
 +-------------+-----------------------+-------------------+
@@ -37,8 +36,7 @@ The course was run seven times with start dates between 05/09/2016 and 10/09/201
 +-------------+-----------------------+-------------------+
 | Members     | A data set containing | Session 2-7       |
 |             | data about those      |                   |
-|             | members of            |                   |
-|             | FutureLearn running   |                   |
+|             | members running   |                   |
 |             | the course (names     |                   |
 |             | have been expunged)   |                   |
 +-------------+-----------------------+-------------------+
