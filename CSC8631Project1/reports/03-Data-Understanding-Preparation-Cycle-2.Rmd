@@ -1,41 +1,88 @@
 # Data Understanding and Preparation Cycle 2
 
+## Data Understanding
+
 ### Explore Data
-The first goal of this round of exploration and cleaning was to see if the `learner-id` columns of the `enrolments` and `quiz responses` datasets could be mapped onto each other, 
-
-### Verify Data Quality
-
-#### Data Quality Report
+The first goal of this round of exploration and cleaning was to see if the `learner-id` columns of the `enrolments` and `quiz responses` datasets could be mapped onto each other, to explore this the `merge` function in R was looked into, this function performs merges on dataframes much like a merge in SQL. `Merge` is able to perform inner, left/right outer and full outer joins, for this operation an inner join was decided to be the required version as having a participant entry without a quiz response or vice versa was unneeded and would just clutter the dataset. It was also decided that much of the two datasets could be left out in the merge, details of which are discussed in sections \@ref(integData) and \@ref(formatData).  
 
 
 
 ## Data Preparation
 
 ### Select Data
+Firstly, since it was decided that only the `enrolments` and `quiz responses` datasets were needed, all other data sets could be ignored from being imported when loading the project, this was achieved by adding the line `data_ignore: /archetype/, /leaving/, /weekly-sentiment/, /members/, /step-activity/, /video/` to the config, this uses regex to match any string between two forward slashes to select which datasets to ignore.
 
-#### Rationale for Inclusion/Exclusion  
+### Integrate Data {#integData}
+The first job in merging the datasets was to retrieve the data and define the parameters of the merge, by default `merge` performs inner merges. To automate the process of merging the datasets a variable was used to iterate over 1 to 7 (for the seven sessions run), then the `get` function was used to retrieve the data. `Get` takes a string name of any environment object and returns that object (interestingly, this is a "pass by value" operation so the original is preserved). Lastly the new dataset needed to be assigned to a new variable, for this the `assign` function was used, this takes a name and a value, and creates a new variable with that name and value. Combining the `get`, `merge` and `assign` functions in a for loop the below code was made:
 
-### Clean Data
-
-#### Data Cleaning Report  
-
-### Construct Data
-
-#### Derived Attributes  
-#### Generated Records  
-
-### Integrate Data
-
-#### Merged Data  
-
-### Format Data
-
-#### Reformatted Data  
-
-### Dataset
-
-#### Dataset Description  
-
+```{r eval=FALSE}
+for (i in 1:7) {
+  enrol_df = get(paste0("enrolments_",i))
+  qresp_df = get(paste0("qresponses_",i))
   
+  new_df = merge(x = enrol_df, y = qresp_df, by.x = "learner_id", by.y = "learner_id")
+  
+  assign(paste0("enrolmentsandresponses_",i), new_df)
+}
+```
 
+Which takes the `enrolments` and `question responses` datasets for a given session, merges them on the `learner_id` column with an inner join and stores the result in a new dataframe.
 
+### Format Data {#formatData}
+Given that analysis was being done on how gender might affect quiz performance for participants, many of the columns in the new dataset could be trimmed out. In addition a new column was added to track which session the question was asked in, this resulted in the edited code chunk below:  
+
+```{r eval=FALSE}
+for (i in 1:7) {
+  enrol_df = get(paste0("enrolments_",i))
+  qresp_df = get(paste0("qresponses_",i))
+  
+  new_df = merge(x = enrol_df, y = qresp_df, by.x = "learner_id", by.y = "learner_id")
+  new_df_trim = new_df[colnames(new_df)[c(1,7,14,22)]]
+  new_df_trim = cbind(new_df_trim, data.frame(session = i))
+  
+  assign(paste0("enANDqr_",i), new_df_trim)
+}
+```
+
+The columns preserved in this trimming are discussed in section \@ref(dataDesc)
+
+Additionally a dataset containing all the sessions in one was made.
+
+### Dataset Description {#dataDesc}  
+During the process of making the merged datasets, many columns were left out and only a few were included, below is the full list of columns from both and whether they were preserved:
+
++--------------------------+-------------------+-----------+
+| Column                   | Dataset of Origin | Included? |
++==========================+===================+===========+
+| learner_id\              | Both\             | Yes\      |
+| enrolled_at\             | Enrolments\       | No\       |
+| unenrolled_at\           | Enrolments\       | No\       |
+| role\                    | Enrolments\       | No\       |
+| fully_participated_at\   | Enrolments\       | No\       |
+| purchased_statement_at\  | Enrolments\       | No\       |
+| gender\                  | Enrolments\       | Yes\      |
+| country\                 | Enrolments\       | No\       |
+| age_range\               | Enrolments\       | No\       |
+| highest_education_level\ | Enrolments\       | No\       |
+| employment_status\       | Enrolments\       | No\       |
+| employment_area\         | Enrolments\       | No\       |
+| detected_country\        | Enrolments\       | No\       |
+| quiz_question\           | Quiz Responses\   | Yes\      |
+| question_type\           | Quiz Responses\   | No\       |
+| week_number\             | Quiz Responses\   | No\       |
+| step_number\             | Quiz Responses\   | No\       |
+| question_number\         | Quiz Responses\   | No\       |
+| response\                | Quiz Responses\   | No\       |
+| cloze_response\          | Quiz Responses\   | No\       |
+| submitted_at\            | Quiz Responses\   | No\       |
+| correct\                 | Quiz Responses\   | Yes\      |
+| session                  | Neither           | Yes       |
++--------------------------+-------------------+-----------+
+
+## Data Understanding and Preparation Cycle Summary
+
+### Summary of Work Done
+By taking advantage of `merge` new data sets were made for each session combining the `enrolments` and `quiz responses` datasets, the new data sets holding the columns described in \@ref(formatData). A dataset combining all of the sessions together was made too.
+
+### Future Plans
+With the data sets made the plan for the analysis of how gender affects quiz performance is to do a visual inspection, comparing the proportion of correct/incorrect results as well as performing t-tests to see if the mean percentage correctness varies in a statistically significant way.
