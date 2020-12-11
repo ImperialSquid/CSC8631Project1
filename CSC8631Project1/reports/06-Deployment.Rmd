@@ -1,0 +1,19 @@
+# Deployment
+
+## Plan Monitoring and Maintenance
+
+### Monitoring and Maintenance Plan  
+There is no need to give this work any ongoing attention.
+
+## Produce Final Report
+
+### Final Report
+This is the final report.
+
+### Final Presentation  
+A video presenting the results will be made. The video is to be approximately 5 minutes long and will look at the work done from the perspective of showing the results to the stakeholders.
+
+## Review Project
+
+### Experience Documentation  
+A short report with my thoughts on CRISP-DM will also be produced.
