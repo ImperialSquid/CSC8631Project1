@@ -1,0 +1,130 @@
+# Modeling
+
+## Visual Inspection of Data
+
+### Graphed Data
+The first sensible step before investing time a statistical investigation was to perform a graphical exploration of the data, to this end the proportion of correct to incorrect answers for male and female participants were compared side by side over the seven sessions. The below code was used
+
+``` {r eval = FALSE}
+enANDqr_all %>%
+  filter(!is.na(gender)) %>%  # filter NAs
+  filter(gender == "male" | gender == "female") %>%  #filter non binary and other
+  ggplot() +
+    geom_bar(aes(x = factor(gender), fill = correct), position = "fill") +  # filled barchart
+    # faceted on sessions
+    facet_grid(rows = vars(session), labeller = labeller(session = labels)) +  
+    labs(x = "Gender of Participant", y = "Percentage Correct Answers to Quiz Questions",
+         title = "Quiz Question Performance of Participants \nover the Seven Sessions",
+         fill = "") +  # nice labels, note: blank legend title 
+    scale_x_discrete(labels = c("M","F")) +  # shorter than male/female
+    # percentage labels look nicer
+    scale_y_continuous(breaks = seq(0,1,by=0.2),labels = paste0(seq(0,100,by=20), "%") ) +  
+    #correct = green, incorrect = red
+    scale_fill_manual(values = c("#FF3333", "#33FF99"), labels = c("Incorrect", "Correct")) +
+    coord_flip() +  #horizontal layout looks a little nicer
+    guides(fill = guide_legend(reverse = TRUE)) +  # show correct on left
+    theme_bw() +  # best theme
+    theme(legend.position = "bottom")  # legend at bottom
+```
+
+Producing the following plot:
+
+``` {r echo = FALSE}
+load(".RData")
+
+enANDqr_all %>%
+  filter(!is.na(gender)) %>%
+  filter(gender == "male" | gender == "female") %>%
+  ggplot() +
+    geom_bar(aes(x = factor(gender), fill = correct), position = "fill") +
+    facet_grid(rows = vars(session), labeller = labeller(session = labels)) +
+    labs(x = "Gender of Participant", y = "Percentage Correct Answers to Quiz Questions",
+         title = "Quiz Question Performance of Participants \nover the Seven Sessions",
+         fill = "") +
+    scale_x_discrete(labels = c("M","F")) +
+    scale_y_continuous(breaks = seq(0,1,by=0.2),labels = paste0(seq(0,100,by=20), "%") ) +
+    scale_fill_manual(values = c("#FF3333", "#33FF99"), labels = c("Incorrect", "Correct")) +
+    coord_flip() +
+    guides(fill = guide_legend(reverse = TRUE)) +
+    theme_bw() +
+    theme(legend.position = "bottom")
+```
+
+### Graphical Implications
+From this graph it can be seen there is some distinction between the performance of men and women in quizzes across the seven sessions, with this we have some justification to perform a statistical test on the data.
+
+
+## Select Statistical Techniques
+
+### Statistical Technique  
+The chosen statistical test was a t test, used to see if the means between two groups varies in a significant way. To make use of this test, for every question in a set, the percentage correct answers for men and women were found, then a paired t test can be performed taking the pairs as those percentages for men and women respectively. The code for this is shown below:
+
+```{r eval = FALSE}
+for (i in 1:7){
+  m_percents = c()
+  f_percents = c()
+  
+  df = get(paste0("enANDqr_", i))
+  
+  for (q in unique(df$quiz_question)) {
+    m_total = length(df$correct[na.omit(df$quiz_question == q & df$gender == "male")])
+    m_corr = sum(df$correct[na.omit(df$quiz_question == q & df$gender == "male")] == "true")
+    m_percents = c(m_percents, m_corr/m_total)
+    
+    f_total = length(df$correct[na.omit(df$quiz_question == q & df$gender == "female")])
+    f_corr = sum(df$correct[na.omit(df$quiz_question == q & df$gender == "female")] == "true")
+    f_percents = c(f_percents, f_corr/f_total)
+  }
+  
+  print(t.test(x=m_percents, y=f_percents))
+  
+}
+
+```
+
+
+### Assumptions Made 
+In the t-test comparing the means of two independent samples, the following assumptions should be met:
+
+1. The means of the two populations being compared should follow Normal distributions.
+
+This is assumed as true since each percentage is based on the total correct answers which can be though of as a sum of Bernoulli trials for each time the question is answered, under the Central Limit Theorem, this averaging results in a Normal variable. 
+
+
+2. If using Student's original definition of the t-test, the two populations being compared should have the same variance. 
+
+Welch's t-test is insensitive to equality of the variances regardless of whether the sample sizes are similar, thus this is not a concern.
+
+3. The data used to carry out the test should either be sampled independently from the two populations being compared or be fully paired.
+
+This is assumed as true since any participants answer is independent from any others, thus their distributions are too.
+
+## Implement Technique
+
+### Technique Results  
+Running the above code we find the below results:
+
++---------+-----------+-------------+-------------+---------+------------------+
+| Session | Male Mean | Female Mean | T Statistic | P Value | Significant at a |
+|         |           |             |             |         | 10%/5%/1% level? |
++=========+===========+=============+=============+=========+==================+
+| 1       | 0.549     | 0.550       | -0.157      | 0.876   | No/No/No         |
++---------+-----------+-------------+-------------+---------+------------------+
+| 2       | 0.593     | 0.689       | -1.573      | 0.125   | No/No/No         |
++---------+-----------+-------------+-------------+---------+------------------+
+| 3       | 0.563     | 0.557       |  0.184      | 0.855   | No/No/No         |
++---------+-----------+-------------+-------------+---------+------------------+
+| 4       | 0.552     | 0.545       |  0.192      | 0.850   | No/No/No         |
++---------+-----------+-------------+-------------+---------+------------------+
+| 5       | 0.598     | 0.593       |  0.102      | 0.920   | No/No/No         |
++---------+-----------+-------------+-------------+---------+------------------+
+| 6       | 0.498     | 0.599       | -1.507      | 0.141   | No/No/No         |
++---------+-----------+-------------+-------------+---------+------------------+
+| 7       | 0.582     | 0.549       |  1.053      | 0.299   | No/No/No         |
++---------+-----------+-------------+-------------+---------+------------------+
+
+
+## Assess Technique Results
+
+### Results Assessment  
+As we can plainly see in the above table, there is no significant evidence to believe men or women do better on the quizzes at any reasonable level.
