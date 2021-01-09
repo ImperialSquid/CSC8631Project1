@@ -22,7 +22,7 @@ for (i in 1:7) {
   
   new_df = merge(x = enrol_df, y = qresp_df, by.x = "learner_id", by.y = "learner_id")
   
-  assign(paste0("enrolmentsandresponses_",i), new_df)
+  assign(paste0("enANDqr_",i), new_df)
 }
 ```
 
